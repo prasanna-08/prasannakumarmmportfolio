@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prasanna Kumar M M – Java Backend Engineer</title>
+<meta name="description" content="Backend engineer building Java 17 and Spring Boot microservices for core banking and government platforms, with GenAI projects in LangGraph.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F8; --surface:#FFFFFF; --ink:#0F1B2D; --muted:#4A5A70; --line:#D5DDE7;
+  --accent:#2753F0; --accent-ink:#FFFFFF; --soft:#E4EBFB; --code-bg:#0F1B2D; --code-ink:#DCE6F5; --code-key:#8FB0FF; --code-str:#7FE0B5;
+  --display:"Bricolage Grotesque","Segoe UI",Arial,sans-serif; --body:"IBM Plex Sans","Segoe UI",Arial,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0B1320;--surface:#121D2F;--ink:#E8EEF7;--muted:#9AABC2;--line:#25334A;--accent:#7C9BFF;--accent-ink:#0B1320;--soft:#18274A;--code-bg:#060B14;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0B1320;--surface:#121D2F;--ink:#E8EEF7;--muted:#9AABC2;--line:#25334A;--accent:#7C9BFF;--accent-ink:#0B1320;--soft:#18274A;--code-bg:#060B14;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font:700 18px var(--display);text-decoration:none}
+.nav nav{display:flex;gap:22px;font-size:15px;overflow-x:auto}
+.nav nav a{text-decoration:none;color:var(--muted);white-space:nowrap}
+.nav nav a:hover{color:var(--ink)}
+.theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 12px;font:500 14px var(--body);cursor:pointer}
+.hero{padding:72px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+h1{font:700 clamp(40px,6.2vw,72px)/1.02 var(--display);letter-spacing:-.025em;margin:0 0 22px}
+.lead{font-size:19px;color:var(--muted);max-width:34em;margin:0 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:500;text-decoration:none;border:1px solid var(--line);background:var(--surface)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{transform:translateY(-1px)}
+pre.code{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:14px;padding:22px;font:400 14px/1.7 var(--mono);overflow-x:auto;border:1px solid var(--line)}
+.code .bar{display:block;color:#7F90AA;margin-bottom:10px}
+.code .k{color:var(--code-key)}.code .s{color:var(--code-str)}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(28px,4vw,40px)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 12px}
+.sub{color:var(--muted);margin:0 0 36px;max-width:40em}
+.role{display:grid;grid-template-columns:200px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line)}
+.role:first-of-type{border-top:0}
+.when{font:500 14px var(--mono);color:var(--muted)}
+.role h3{font:700 21px/1.25 var(--display);margin:0 0 4px}
+.org{color:var(--accent);font-weight:500;margin:0 0 12px}
+.role ul{margin:0;padding-left:18px;color:var(--muted)}
+.role li{margin-bottom:8px;max-width:62ch}
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px}
+.card h3{font:700 22px/1.2 var(--display);margin:0 0 6px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;list-style:none}
+.tags li{background:var(--soft);color:var(--accent);border-radius:6px;padding:3px 10px;font:500 13px var(--mono)}
+.card p{margin:0 0 12px;color:var(--muted)}
+.card a.link{color:var(--accent);font-weight:500}
+.stack{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stack h3{font:700 16px var(--display);margin:0 0 10px}
+.stack p{margin:0;color:var(--muted);font-size:16px}
+.legend{margin-top:28px;font-size:15px;color:var(--muted)}
+.certs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding:0;margin:0;list-style:none}
+.certs li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+.certs b{display:block;font-family:var(--display);font-size:18px}
+.certs span{color:var(--muted);font-size:15px}
+.contact{text-align:left}
+.contact a.mail{font:700 clamp(24px,5vw,48px)/1.1 var(--display);letter-spacing:-.02em;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:8px;word-break:break-all}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+footer{padding:28px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:820px){
+  .hero .wrap,.projects,.stack,.certs{grid-template-columns:1fr}
+  .role{grid-template-columns:1fr;gap:6px}
+  .hero{padding-top:40px}
+  .nav nav{display:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .code .ln{opacity:0;animation:in .4s forwards}
+  @keyframes in{to{opacity:1}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top">Prasanna Kumar</a>
+  <nav aria-label="Sections"><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#stack">Stack</a><a href="#contact">Contact</a></nav>
+  <button class="theme" id="theme" type="button" aria-label="Toggle dark mode">Theme</button>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>I build the Java services that banks and governments run on.</h1>
+    <p class="lead">Backend engineer with 3 years in core banking and government platforms. I write Spring Boot and Spring Cloud microservices, support them in production, and build GenAI tools with LangGraph on the side.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:prasannakumarmm08@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/prasanna-kumar-677096201" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/prasanna-08" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <pre class="code" aria-label="Summary of Prasanna as a JSON response"><span class="bar ln" style="animation-delay:.1s">GET /engineers/prasanna-kumar  200 OK</span><span class="ln" style="animation-delay:.3s">{</span>
+<span class="ln" style="animation-delay:.5s">  <span class="k">"role"</span>: <span class="s">"Packaged App Development Analyst"</span>,</span>
+<span class="ln" style="animation-delay:.7s">  <span class="k">"company"</span>: <span class="s">"Accenture"</span>,</span>
+<span class="ln" style="animation-delay:.9s">  <span class="k">"location"</span>: <span class="s">"Chennai, India"</span>,</span>
+<span class="ln" style="animation-delay:1.1s">  <span class="k">"core"</span>: [<span class="s">"Java 17"</span>, <span class="s">"Spring Boot"</span>,</span>
+<span class="ln" style="animation-delay:1.3s">           <span class="s">"Spring Cloud"</span>, <span class="s">"Oracle"</span>],</span>
+<span class="ln" style="animation-delay:1.5s">  <span class="k">"domains"</span>: [<span class="s">"core banking"</span>, <span class="s">"government"</span>],</span>
+<span class="ln" style="animation-delay:1.7s">  <span class="k">"certified"</span>: <span class="s">"Claude Certified Architect"</span>,</span>
+<span class="ln" style="animation-delay:1.9s">  <span class="k">"open_to_work"</span>: <span class="s">true</span></span>
+<span class="ln" style="animation-delay:2.1s">}</span></pre>
+</div></div>
+
+<section id="experience"><div class="wrap">
+  <h2>Experience</h2>
+  <p class="sub">From a government data platform to core banking, now leading full-stack delivery.</p>
+  <div class="role">
+    <div class="when">Jun 2026 – Present</div>
+    <div><h3>Packaged App Development Analyst</h3><p class="org">Accenture, Chennai</p>
+    <ul>
+      <li>Lead full-stack delivery for enterprise client applications, owning Java and Spring Boot services and the frontend integration.</li>
+      <li>Work with clients and QA in an Agile setup to ship production-quality releases.</li>
+      <li>Use enterprise-authorized AI tools (Claude, GitHub Copilot) for code generation, refactoring and unit tests, checked through peer review and secure coding standards.</li>
+    </ul></div>
+  </div>
+  <div class="role">
+    <div class="when">Apr 2024 – May 2026</div>
+    <div><h3>Associate Software Engineer</h3><p class="org">Accenture, Chennai</p>
+    <ul>
+      <li>Built RESTful APIs in Java and Spring Boot for core banking features (deposits, cards) in a regulated environment, using JPA/Hibernate for persistence.</li>
+      <li>Implemented Spring Cloud microservices with Redis caching, improving modularity and response times and making components independently deployable and testable.</li>
+      <li>Delivered frontend features in the Sparta framework, integrated with backend APIs, end to end.</li>
+      <li>Wrote JUnit and Mockito tests, validated APIs in Postman, triaged production defects with QA and client teams, and deployed builds to DEV and SIT through Maven, Git/BitBucket and CI/CD.</li>
+    </ul></div>
+  </div>
+  <div class="role">
+    <div class="when">Dec 2023 – Apr 2024</div>
+    <div><h3>Software Developer Engineer</h3><p class="org">National Informatics Centre, MeitY, Bangalore</p>
+    <ul>
+      <li>Built a Risk Management System for the Foreign Post Office Project and streamlined approval steps, cutting processing time and steps in import clearance.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <p class="sub">Two projects outside client work, one in GenAI and one in Java.</p>
+  <div class="projects">
+    <article class="card">
+      <h3>HealthBot</h3>
+      <ul class="tags"><li>Python</li><li>LangGraph</li><li>LangChain</li><li>Tavily</li><li>Mistral AI</li></ul>
+      <p>A patient education assistant built as a multi-step LLM workflow with stateful nodes and conditional routing. It takes a health topic, retrieves current medical information through Tavily search, and has Mistral AI write a patient-friendly summary.</p>
+      <p>A comprehension-check loop then generates a quiz question, grades the patient’s answer and explains it with reference to the summary. Graph state survives input pauses, topic restarts and exit.</p>
+      <a class="link" href="https://github.com/prasanna-08" target="_blank" rel="noopener">See my GitHub</a>
+    </article>
+    <article class="card">
+      <h3>Skill and Job Recommender</h3>
+      <ul class="tags"><li>Java</li><li>Spring Boot</li><li>Relational DB</li></ul>
+      <p>A web app that finds job openings matching a user’s skills through job-search APIs.</p>
+      <p>A chatbot interface gives recommendations in conversation, and user profiles and job alerts are stored in a relational database.</p>
+      <a class="link" href="https://github.com/prasanna-08" target="_blank" rel="noopener">See my GitHub</a>
+    </article>
+  </div>
+</div></section>
+
+<section id="stack"><div class="wrap">
+  <h2>Stack</h2>
+  <p class="sub">What I use daily, and what I have built with in projects.</p>
+  <div class="stack">
+    <div><h3>Backend</h3><p>Java 17, Spring Boot, Spring Cloud, REST APIs, microservices, JPA/Hibernate, Redis caching, distributed systems</p></div>
+    <div><h3>Data and delivery</h3><p>Oracle, MySQL, SQL, Maven, Git, BitBucket, Jenkins, JUnit, Mockito, TestNG, Postman, Jira</p></div>
+    <div><h3>Frontend</h3><p>Angular in client work. React and Node.js/TypeScript in projects.</p></div>
+    <div><h3>Cloud</h3><p>Azure (Compute, Blob Storage) and Docker. AWS in projects.</p></div>
+    <div><h3>Messaging</h3><p>Kafka and RabbitMQ in projects.</p></div>
+    <div><h3>GenAI</h3><p>LLM API integration, prompt engineering, LangChain, LangGraph, Mistral AI, Tavily, RAG concepts, Claude, GitHub Copilot</p></div>
+  </div>
+  <p class="legend">Currently exploring Java 21. Python is at project level.</p>
+</div></section>
+
+<section id="certifications"><div class="wrap">
+  <h2>Certifications and education</h2>
+  <p class="sub">&nbsp;</p>
+  <ul class="certs">
+    <li><b>Claude Certified Architect</b><span>Anthropic</span></li>
+    <li><b>Azure Fundamentals (AZ-900)</b><span>Microsoft</span></li>
+    <li><b>GitHub Copilot (GH-300)</b><span>GitHub</span></li>
+    <li><b>B.E. Computer Science and Engineering</b><span>K.L.N. College of Engineering, 2019–2023, GPA 8.69</span></li>
+  </ul>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+  <h2>Let’s talk</h2>
+  <p class="sub">I’m looking for my next Java backend role. The fastest way to reach me is email.</p>
+  <a class="mail" href="mailto:prasannakumarmm08@gmail.com">prasannakumarmm08@gmail.com</a>
+  <div class="links">
+    <a class="btn" href="https://www.linkedin.com/in/prasanna-kumar-677096201" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/prasanna-08" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">Prasanna Kumar M M, Madurai, India</div></footer>
+
+<script>
+(function(){
+  var b=document.getElementById('theme'),r=document.documentElement;
+  b.addEventListener('click',function(){
+    var dark=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+    r.setAttribute('data-theme',dark?'light':'dark');
+  });
+})();
+</script>
+</body>
+</html>
